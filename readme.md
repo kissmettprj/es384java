@@ -1,5 +1,9 @@
-openssl ecparam -genkey -name secp384r1 -out private.pem #Éú³ÉË½Ô¿
-openssl ec -in private.pem -pubout -out public.pem #Éú³É¹«Ô¿
-openssl req -new -key private.pem -out ecc.csr #Éú³ÉÖ¤ÊéÇëÇóÎÄ¼ş
-openssl x509 -req -in ecc.csr -out ecc.cer -signkey private.pem -CAcreateserial -days 3650 #Éú³É×ÔÇ©¸ùÖ¤Êé
-openssl pkcs12 -export -clcerts -in ecc.cer -inkey private.pem -out ecc.p12 #µ¼³öp12¸ñÊ½¸ùÖ¤Êé
+openssl ecparam -genkey -name secp384r1 -out private.pem #ç”Ÿæˆç§é’¥
+
+openssl ec -in private.pem -pubout -out public.pem #ç”Ÿæˆå…¬é’¥
+
+openssl req -new -key private.pem -out ecc.csr #ç”Ÿæˆè¯ä¹¦è¯·æ±‚æ–‡ä»¶
+
+openssl x509 -req -in ecc.csr -out ecc.cer -signkey private.pem -CAcreateserial -days 3650 #ç”Ÿæˆè‡ªç­¾æ ¹è¯ä¹¦
+
+openssl pkcs12 -export -clcerts -in ecc.cer -inkey private.pem -out ecc.p12 #å¯¼å‡ºp12æ ¼å¼æ ¹è¯ä¹¦
